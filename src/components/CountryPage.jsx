@@ -48,14 +48,14 @@ const CountryPage = () => {
         </button>
       </div>
       <div className="grid lg:grid-cols-2 mx-auto grid-cols-1 lg:gap-32 gap-10 px-10">
-        <div className="md:w-xl md:h-96 w-xl h-80 rounded-lg shadow-lg">
+        <div className="md:w-xl md:h-96 w-xl h-64 rounded-lg shadow-lg">
           <img className="w-full h-full rounded-lg" src={selectedCountry.country_flag} alt="Img" />
         </div>
         <div className="grid lg:gap-0 gap-5 mr-3">
           <div className="flex items-center">
             <span className="text-3xl font-bold max-h-24">{selectedCountry.country_name}</span>
           </div>
-          <div className="flex flex-col flex-wrap py-3 max-h-44 text-md md:text-lg gap-x-3">
+          <div className="flex flex-col md:flex-wrap py-3 max-h-44 text-md md:text-lg md:gap-x-3">
             <span><b>Native Name:</b> {selectedCountry.country_nativename}</span>
             <span><b>Population:</b> {selectedCountry.country_population}</span>
             <span><b>Region:</b> {selectedCountry.country_region}</span>
