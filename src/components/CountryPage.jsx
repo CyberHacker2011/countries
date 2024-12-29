@@ -67,7 +67,7 @@ const CountryPage = () => {
           </div>
           <div>
             <span className="text-lg font-bold">Border Countries:&emsp;</span>
-            <div className="inline-flex flex-wrap gap-2 lg:m-0 mt-2 ">
+            <div className="inline-flex flex-wrap gap-2">
               {selectedCountry.country_bordercountries?.map((borderCountry, index) => (
                 <a key={index}  className={borderCountriesStyle}>{borderCountry }</a>
               ))}
