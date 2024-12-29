@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+noimport React, { useContext } from 'react';
 import { countriesDataContext, themeController, onePageContext } from '../App';
 
 const CountryPage = () => {
@@ -81,4 +81,3 @@ const CountryPage = () => {
 
 export default CountryPage;
 
-can you make this work for mobiles fix some bugs actually bugs are incountry info list
