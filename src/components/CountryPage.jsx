@@ -31,7 +31,7 @@ const CountryPage = () => {
 
   if (!selectedCountry) {
     return (
-      <div className="block p-10">
+      <div className="block p-7">
         <span>Invalid country selected</span>
         <button className="dark:bg-secondary inline-flex items-center gap-3 border-none bg-white drop-shadow-md shadow-md py-2 px-5 text-sm font-sans rounded-md m-5" onClick={handleBackBtn}>
           {theme ? backSymbolDark : backSymbolWhite} Back
