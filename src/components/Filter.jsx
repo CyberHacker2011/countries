@@ -11,8 +11,8 @@ const Filter = () => {
   }
   
   return (
-    <div className='dark:bg-secondary shadow-lg rounded-md max-w-60'>
-        <select onChange={()=> handleFilterQuery(event)} name="Filter-by-region " className='dark:bg-secondary dark sm:text-base bg-transparent w-full h-full cursor-pointer  text-md rounded-md px-5 py-4 focus:outline-none'>
+    <div className='dark:bg-secondary bg-white shadow-lg rounded-md max-w-60'>
+        <select onChange={()=> handleFilterQuery(event)} name="Filter-by-region " className='dark:bg-secondary bg-white sm:text-base bg-transparent w-full h-full cursor-pointer  text-md rounded-md px-5 py-4 focus:outline-none'>
             <option value="" >Filter by region</option>
             <option value="Africa">Africa</option>
             <option value="Asia">Asia</option>
