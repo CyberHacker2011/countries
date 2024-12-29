@@ -48,7 +48,7 @@ const CountryPage = () => {
         </button>
       </div>
       <div className="grid lg:grid-cols-2 mx-auto grid-cols-1 lg:gap-32 gap-10 px-10">
-        <div className="md:w-xl md:h-96 w-xl h-64 rounded-lg shadow-lg">
+        <div className="md:w-xl md:h-96 w-xl h-80 rounded-lg shadow-lg">
           <img className="w-full h-full rounded-lg" src={selectedCountry.country_flag} alt="Img" />
         </div>
         <div className="grid lg:gap-0 gap-5 mr-3">
