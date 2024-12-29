@@ -1,4 +1,4 @@
-noimport React, { useContext } from 'react';
+import React, { useContext } from 'react';
 import { countriesDataContext, themeController, onePageContext } from '../App';
 
 const CountryPage = () => {
