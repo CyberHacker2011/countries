@@ -55,7 +55,7 @@ const CountryPage = () => {
           <div className="flex items-center">
             <span className="text-3xl font-bold max-h-24">{selectedCountry.country_name}</span>
           </div>
-          <div className="flex flex-col lg:flex-wrap py-3 max-h-44 text-md md:text-lg md:gap-x-3">
+          <div className="flex flex-col xl:flex-wrap py-3 max-h-44 text-md md:text-lg md:gap-x-3">
             <span><b>Native Name:</b> {selectedCountry.country_nativename}</span>
             <span><b>Population:</b> {selectedCountry.country_population}</span>
             <span><b>Region:</b> {selectedCountry.country_region}</span>
