@@ -19,12 +19,12 @@ const CountryPage = () => {
 
   let selectedCountry;
   countriesData.forEach(country => {
-    if (country.country_id === onePage ){
+    if (country.country_id === onePage) {
       selectedCountry = country;
     }
   });
-  const borderCountriesStyle = "dark:bg-secondary px-3 py-1 rounded-sm drop-shadow-md shadow-md ";
-  const infosCountryStyle = "flex flex-wrap"
+
+  const borderCountriesStyle = "dark:bg-secondary px-3 py-1 rounded-sm drop-shadow-md shadow-md";
   const handleBackBtn = () => {
     setOnePage(null);
   };
@@ -33,7 +33,10 @@ const CountryPage = () => {
     return (
       <div className="block p-7">
         <span>Invalid country selected</span>
-        <button className="dark:bg-secondary inline-flex items-center gap-3 border-none bg-white drop-shadow-md shadow-md py-2 px-5 text-sm font-sans rounded-md m-5" onClick={handleBackBtn}>
+        <button
+          className="dark:bg-secondary inline-flex items-center gap-3 border-none bg-white drop-shadow-md shadow-md py-2 px-5 text-sm font-sans rounded-md m-5"
+          onClick={handleBackBtn}
+        >
           {theme ? backSymbolDark : backSymbolWhite} Back
         </button>
       </div>
@@ -41,41 +44,61 @@ const CountryPage = () => {
   }
 
   return (
-    <>
-      <div className="block p-10">
-        <button className="dark:bg-secondary flex items-center gap-3 border-none bg-white drop-shadow-md shadow-md py-2 px-5 text-sm font-sans rounded-md" onClick={handleBackBtn}>
+    <div className="p-5">
+      {/* Back Button */}
+      <div className="mb-5">
+        <button
+          className="dark:bg-secondary flex items-center gap-3 border-none bg-white drop-shadow-md shadow-md py-2 px-5 text-sm font-sans rounded-md"
+          onClick={handleBackBtn}
+        >
           {theme ? backSymbolDark : backSymbolWhite} Back
         </button>
       </div>
-      <div className="grid lg:grid-cols-2 mx-auto grid-cols-1 lg:gap-32 gap-10 px-10">
-        <div className="md:w-xl md:h-96 w-xl h-64 rounded-lg shadow-lg">
-          <img className="w-full h-full rounded-lg" src={selectedCountry.country_flag} alt="Img" />
+
+      {/* Country Details */}
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
+        {/* Flag */}
+        <div className="rounded-lg shadow-lg">
+          <img
+            className="w-full h-full rounded-lg"
+            src={selectedCountry.country_flag}
+            alt={`${selectedCountry.country_name} flag`}
+          />
         </div>
-        <div className="grid lg:gap-0 gap-5 mr-3">
-          <div className="flex items-center">
-            <span className="text-3xl font-bold max-h-24">{selectedCountry.country_name}</span>
+
+        {/* Country Info */}
+        <div className="space-y-5">
+          <h1 className="text-2xl md:text-3xl font-bold">{selectedCountry.country_name}</h1>
+
+          <div className="space-y-2 text-sm md:text-base">
+            <p><b>Native Name:</b> {selectedCountry.country_nativename || "N/A"}</p>
+            <p><b>Population:</b> {selectedCountry.country_population?.toLocaleString() || "N/A"}</p>
+            <p><b>Region:</b> {selectedCountry.country_region || "N/A"}</p>
+            <p><b>Capital:</b> {selectedCountry.country_capital || "N/A"}</p>
+            <p><b>Subregion:</b> {selectedCountry.country_subregion || "N/A"}</p>
+            <p><b>Top Level Domain:</b> {selectedCountry.country_topleveldomain || "N/A"}</p>
+            <p><b>Currencies:</b> {selectedCountry.country_currencies?.join(", ") || "N/A"}</p>
+            <p><b>Languages:</b> {selectedCountry.country_languages?.join(", ") || "N/A"}</p>
           </div>
-          <div className="flex flex-col xl:flex-wrap py-3 max-h-44 text-md md:text-lg md:gap-x-3">
-            <span><b>Native Name:</b> {selectedCountry.country_nativename}</span>
-            <span><b>Population:</b> {selectedCountry.country_population}</span>
-            <span><b>Region:</b> {selectedCountry.country_region}</span>
-            <span><b>Capital:</b> {selectedCountry.country_capital}</span>
-            <span><b>Subregion:</b> {selectedCountry.country_subregion}</span>
-            <span><b>Top Level Domain:</b> {selectedCountry.country_topleveldomain}</span>
-            <span><b>Currencies:</b> {selectedCountry.country_currencies}</span>
-            <span><b>Languages:</b> {selectedCountry.country_languages}</span>
-          </div>
+
+          {/* Border Countries */}
           <div>
             <span className="text-lg font-bold">Border Countries:&emsp;</span>
-            <div className="inline-flex flex-wrap gap-2 lg:m-0 mt-2 ">
-              {selectedCountry.country_bordercountries?.map((borderCountry, index) => (
-                <a key={index}  className={borderCountriesStyle}>{borderCountry }</a>
-              ))}
+            <div className="inline-flex flex-wrap gap-2 mt-2">
+              {selectedCountry.country_bordercountries?.length > 0 ? (
+                selectedCountry.country_bordercountries.map((borderCountry, index) => (
+                  <span key={index} className={borderCountriesStyle}>
+                    {borderCountry}
+                  </span>
+                ))
+              ) : (
+                <span>No border countries</span>
+              )}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
